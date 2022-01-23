@@ -21,7 +21,7 @@ class Difference(object):
         if j + 1 < len(self.diff):  # j位置-val,因为后续根据diff复原时后面重复加了
             self.diff[j+1] -= val
         print(self.diff)
-
+    # 根据差分数组改变结果
     # 返回结果数组
     def result(self, nums):
         # res = [0] * len(self.diff)
