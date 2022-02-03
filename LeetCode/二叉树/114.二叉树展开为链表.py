@@ -32,6 +32,24 @@ class Solution(object):
         :type root: TreeNode
         :rtype: None Do not return anything, modify root in-place instead.
         """
+        if root == None:
+            return
+        self.flatten(root.left)
+        self.flatten(root.right)
+
+        # 先将左子树，右子树拉平
+        left = root.left
+        right = root.right
+
+        # 左子树作为右子树
+        root.left = None
+        root.right = left
+
+        # 将原先的右子树接到当前右子树的末端
+        p = root
+        while (p.right):
+            p = p.right
+        p.right = right
 
 
 if __name__ == '__main__':
